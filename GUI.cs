@@ -1,11 +1,14 @@
 ﻿using PortForward2WSL.Properties;
 using System;
+using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Management.Automation;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,11 +19,17 @@ namespace PortForward2WSL
     public partial class PortForward2WSL : Form
     {
         private int[] currentPorts;
+        private string PS1Folder;
 
+
+        /******************************
+         * Windows Form Method
+         ******************************/
         public PortForward2WSL()
         {
             InitializeComponent();
             currentPorts = new int[] { };
+            PS1Folder = Path.Combine(Environment.CurrentDirectory, "PS1");
         }
 
         private void PortForward2WSL_Load(object sender, EventArgs e)
@@ -50,6 +59,32 @@ namespace PortForward2WSL
             UpdateGUI();
         }
 
+        private void Button_Click(object sender, EventArgs e)
+        {
+            string clickedButton = ((Button)sender).Text;
+            string filePath = "";
+
+            if (clickedButton == Resources.start)
+            {
+                filePath = Path.Combine(PS1Folder, "open_wsl_port.ps1");
+            }
+            else if (clickedButton == Resources.stop)
+            {
+                filePath = Path.Combine(PS1Folder, "close_wsl_port.ps1");
+            }
+            else if (clickedButton == Resources.reflesh)
+            {
+                InitializePort();
+                UpdateGUI();
+                return;
+            }
+            PS1Invoke(filePath);
+        }
+
+        /******************************
+         * Helper Method
+         ******************************/
+
         /// <summary>
         /// Initialize Language (en-US)
         /// </summary>
@@ -69,8 +104,11 @@ namespace PortForward2WSL
             PortRule.Text = Resources.port_rule;
             StartButton.Text = Resources.start;
             StopButton.Text = Resources.stop;
-            RestartButton.Text = Resources.restart;
-            portsBox.Text = String.Join(",", currentPorts.Select(port => port.ToString()).ToArray());
+            RefleshButton.Text = Resources.reflesh;
+            ForwardedPortsLabel.Text = Resources.forwarded_port;
+            ForwardedPort.Text = currentPorts.Length > 0
+                                    ? String.Join(",", currentPorts.Select(port => port.ToString()).ToArray())
+                                    : Resources.none_port;
         }
 
         /// <summary>
@@ -84,9 +122,16 @@ namespace PortForward2WSL
                             : new int[] { };
         }
 
-        private void StartButton_Click(object sender, EventArgs e)
+        private void PS1Invoke(string PS1FilePath)
         {
-            Console.WriteLine(Environment.CurrentDirectory);
+            RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
+            runspaceInvoke.Invoke(PS1FilePath);
+            runspaceInvoke.Dispose();
+        }
+
+        private void CopyButton_Click(object sender, EventArgs e)
+        {
+            PortsBox.Text = currentPorts.Length > 0 ? ForwardedPort.Text : "";
         }
     }
 }

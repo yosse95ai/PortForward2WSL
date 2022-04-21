@@ -61,11 +61,29 @@ namespace PortForward2WSL.Properties {
         }
         
         /// <summary>
+        ///   Forwarded ports: に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string forwarded_port {
+            get {
+                return ResourceManager.GetString("forwarded_port", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Language: に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string language {
             get {
                 return ResourceManager.GetString("language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   None port. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string none_port {
+            get {
+                return ResourceManager.GetString("none_port", resourceCulture);
             }
         }
         
@@ -88,11 +106,11 @@ namespace PortForward2WSL.Properties {
         }
         
         /// <summary>
-        ///   Restart に類似しているローカライズされた文字列を検索します。
+        ///   Reflesh に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string restart {
+        internal static string reflesh {
             get {
-                return ResourceManager.GetString("restart", resourceCulture);
+                return ResourceManager.GetString("reflesh", resourceCulture);
             }
         }
         

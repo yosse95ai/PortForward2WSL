@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="forwarded_port" xml:space="preserve">
+    <value>Forwarded ports:</value>
+  </data>
   <data name="language" xml:space="preserve">
     <value>Language:</value>
+  </data>
+  <data name="none_port" xml:space="preserve">
+    <value>None port.</value>
   </data>
   <data name="port_label" xml:space="preserve">
     <value>Port numbers:</value>
@@ -126,8 +132,8 @@
   <data name="port_rule" xml:space="preserve">
     <value>Separate by comma. (ex. 3000,3001)</value>
   </data>
-  <data name="restart" xml:space="preserve">
-    <value>Restart</value>
+  <data name="reflesh" xml:space="preserve">
+    <value>Reflesh</value>
   </data>
   <data name="start" xml:space="preserve">
     <value>Start</value>
