@@ -78,7 +78,9 @@ namespace PortForward2WSL
                 UpdateGUI();
                 return;
             }
-            PS1Invoke(filePath);
+            PS1InvokeParams(filePath);
+            InitializePort();
+            UpdateGUI();
         }
 
         /******************************
@@ -127,6 +129,11 @@ namespace PortForward2WSL
             RunspaceInvoke runspaceInvoke = new RunspaceInvoke();
             runspaceInvoke.Invoke(PS1FilePath);
             runspaceInvoke.Dispose();
+        }
+
+        private void PS1InvokeParams(string PS1FilePath)
+        {
+            PowerShell.Create().AddScript(PS1FilePath).Invoke();
         }
 
         private void CopyButton_Click(object sender, EventArgs e)

@@ -152,7 +152,6 @@
             this.ForwardedPortsLabel.Size = new System.Drawing.Size(205, 27);
             this.ForwardedPortsLabel.TabIndex = 1;
             this.ForwardedPortsLabel.Text = "Forwarded ports:";
-            this.ForwardedPortsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ForwardedPort
             // 
