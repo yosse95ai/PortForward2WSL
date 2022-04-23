@@ -20,4 +20,7 @@ https://github.com/yosse95ai/PortForward2WSL/tree/master/PortForward2WSL
 ### Finish port forwarding
 1. Click "Stop" button.
 
+## Operating Principle
+Sorry, this article is written in in Japanese only.
 
+https://qiita.com/RoaaaA/items/691be530a3f183f113b0
