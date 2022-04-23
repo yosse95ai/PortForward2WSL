@@ -29,7 +29,6 @@ namespace PortForward2WSL
             InitializeComponent();
             currentPorts = new int[] { };
             PS1Folder = Path.Combine(Environment.CurrentDirectory, "PS1");
-            PSFilePreparation();
         }
 
         private void PortForward2WSL_Load(object sender, EventArgs e)
@@ -163,17 +162,6 @@ namespace PortForward2WSL
         private void CopyButton_Click(object sender, EventArgs e)
         {
             PortsBox.Text = currentPorts.Length > 0 ? ForwardedPort.Text : "";
-        }
-
-        private void PSFilePreparation()
-        {
-            if (Directory.Exists(PS1Folder)
-                && File.Exists(Path.Combine(PS1Folder, openWslPort))
-                && File.Exists(Path.Combine(PS1Folder, closeWslPort))
-               )
-            {
-                return;
-            }
         }
         private void ArrayWriteline<T>(T[] arr)
         {
