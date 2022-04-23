@@ -1,14 +1,13 @@
-if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole("Administrators")) { Start-Process powershell.exe "-File `"$PSCommandPath`"" -Verb RunAs -Wait; }
-
-$ports = @([Environment]::GetEnvironmentVariable("PORT","User") -Split " ");
-
-for( $i = 0; $i -lt $ports.length; $i++ ){
-  $port = $ports[$i];
-  iex "netsh interface portproxy delete v4tov4 listenport=$port";
-  echo "clesed Port:$port"
+if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole("Administrators")) { 
+  Start-Process powershell.exe "-File `"$PSCommandPath`"" -WindowStyle hidden -Verb RunAs -Wait; exit;
 }
-[Environment]::SetEnvironmentVariable('PORT',"","User")
+if (([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole("Administrators")) { 
 
+  $ports = @([Environment]::GetEnvironmentVariable("PORT","User") -Split ",");
 
-# Show proxies
-iex "netsh interface portproxy show v4tov4";
+  for( $i = 0; $i -lt $ports.length; $i++ ){
+    $port = $ports[$i];
+    iex "netsh interface portproxy delete v4tov4 listenport=$port";
+  }
+  [Environment]::SetEnvironmentVariable('PORT',"","User")
+}
