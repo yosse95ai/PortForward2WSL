@@ -14,13 +14,17 @@ https://github.com/yosse95ai/PortForward2WSL/tree/master/PortForward2WSL
 ### インストール
 1. このリポジトリをダウンロードします。
 
-### Start port forwarding
+### ポートフォワーディングの開始
 1. 自身のPCでダウンロードした[PortForward2WSL/tree/master/PortForward2WSL](https://github.com/yosse95ai/PortForward2WSL/tree/master/PortForward2WSL)を開きます。
 1. `PortForward2WSL.exe`ファイルを実行します。
 1. "ポート番号"入力欄にポート番号を入力します。
 4. "Start"ボタンをクリックします。
 
-### Finish port forwarding
+### ポートフォワーディングの終了
 1. "Stop"ボタンをクリックします。
 
 
+## 動作原理
+この記事で取り扱っているスクリプトの動作仕様がほとんどすべてです。
+
+https://qiita.com/RoaaaA/items/691be530a3f183f113b0
