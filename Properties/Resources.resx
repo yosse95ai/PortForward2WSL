@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="empty" xml:space="preserve">
+    <value>Port numbers field is empty.</value>
+  </data>
   <data name="forwarded_port" xml:space="preserve">
     <value>Forwarded ports:</value>
   </data>
@@ -140,5 +143,11 @@
   </data>
   <data name="stop" xml:space="preserve">
     <value>Stop</value>
+  </data>
+  <data name="urls" xml:space="preserve">
+    <value>URLs:</value>
+  </data>
+  <data name="wait" xml:space="preserve">
+    <value>Wait a moment...</value>
   </data>
 </root>

@@ -61,6 +61,15 @@ namespace PortForward2WSL.Properties {
         }
         
         /// <summary>
+        ///   Port numbers field is empty. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string empty {
+            get {
+                return ResourceManager.GetString("empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Forwarded ports: に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string forwarded_port {
@@ -129,6 +138,24 @@ namespace PortForward2WSL.Properties {
         internal static string stop {
             get {
                 return ResourceManager.GetString("stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   URLs: に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string urls {
+            get {
+                return ResourceManager.GetString("urls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Wait a moment... に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string wait {
+            get {
+                return ResourceManager.GetString("wait", resourceCulture);
             }
         }
     }

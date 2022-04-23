@@ -117,17 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="empty" xml:space="preserve">
+    <value>ポート番号を指定してください。</value>
+  </data>
   <data name="forwarded_port" xml:space="preserve">
-    <value>開放したポート:</value>
+    <value>開放したポート：</value>
   </data>
   <data name="language" xml:space="preserve">
-    <value>言語選択:</value>
+    <value>言語選択：</value>
   </data>
   <data name="none_port" xml:space="preserve">
     <value>ポートがありません。</value>
   </data>
   <data name="port_label" xml:space="preserve">
-    <value>ポート番号:</value>
+    <value>ポート番号：</value>
   </data>
   <data name="port_rule" xml:space="preserve">
     <value>複数の場合は，カンマで区切る。(例：3000,3001)</value>
@@ -140,5 +143,11 @@
   </data>
   <data name="stop" xml:space="preserve">
     <value>ストップ</value>
+  </data>
+  <data name="urls" xml:space="preserve">
+    <value>URL：</value>
+  </data>
+  <data name="wait" xml:space="preserve">
+    <value>しばらくお待ちください。</value>
   </data>
 </root>
