@@ -35,11 +35,12 @@
             this.PortsBox = new System.Windows.Forms.TextBox();
             this.PortRule = new System.Windows.Forms.Label();
             this.StartButton = new System.Windows.Forms.Button();
-            this.RefleshButton = new System.Windows.Forms.Button();
             this.StopButton = new System.Windows.Forms.Button();
             this.ForwardedPortsLabel = new System.Windows.Forms.Label();
-            this.ForwardedPort = new System.Windows.Forms.RichTextBox();
-            this.CopyButton = new System.Windows.Forms.Button();
+            this.UrlsLabel = new System.Windows.Forms.Label();
+            this.HostArea = new System.Windows.Forms.TextBox();
+            this.ForwardedPort = new System.Windows.Forms.TextBox();
+            this.WaitLable = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LanguageSelection
@@ -76,7 +77,7 @@
             this.Port.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Port.Location = new System.Drawing.Point(12, 58);
             this.Port.Name = "Port";
-            this.Port.Size = new System.Drawing.Size(205, 27);
+            this.Port.Size = new System.Drawing.Size(180, 27);
             this.Port.TabIndex = 1;
             this.Port.Text = "Port numbers:";
             this.Port.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -85,18 +86,18 @@
             // 
             this.PortsBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PortsBox.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.PortsBox.Location = new System.Drawing.Point(223, 58);
+            this.PortsBox.Location = new System.Drawing.Point(198, 58);
             this.PortsBox.Name = "PortsBox";
-            this.PortsBox.Size = new System.Drawing.Size(285, 26);
+            this.PortsBox.Size = new System.Drawing.Size(310, 26);
             this.PortsBox.TabIndex = 2;
             // 
             // PortRule
             // 
             this.PortRule.BackColor = System.Drawing.Color.Transparent;
             this.PortRule.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.PortRule.Location = new System.Drawing.Point(223, 87);
+            this.PortRule.Location = new System.Drawing.Point(198, 87);
             this.PortRule.Name = "PortRule";
-            this.PortRule.Size = new System.Drawing.Size(285, 31);
+            this.PortRule.Size = new System.Drawing.Size(282, 31);
             this.PortRule.TabIndex = 1;
             this.PortRule.Text = "Separate by comma. (ex. 3000, 3001)";
             // 
@@ -106,27 +107,13 @@
             this.StartButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartButton.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.StartButton.Location = new System.Drawing.Point(380, 358);
+            this.StartButton.Location = new System.Drawing.Point(380, 318);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(128, 32);
             this.StartButton.TabIndex = 3;
             this.StartButton.Text = "Start";
             this.StartButton.UseVisualStyleBackColor = false;
             this.StartButton.Click += new System.EventHandler(this.Button_Click);
-            // 
-            // RefleshButton
-            // 
-            this.RefleshButton.BackColor = System.Drawing.Color.LimeGreen;
-            this.RefleshButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RefleshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RefleshButton.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.RefleshButton.Location = new System.Drawing.Point(246, 358);
-            this.RefleshButton.Name = "RefleshButton";
-            this.RefleshButton.Size = new System.Drawing.Size(128, 32);
-            this.RefleshButton.TabIndex = 3;
-            this.RefleshButton.Text = "Reflesh";
-            this.RefleshButton.UseVisualStyleBackColor = false;
-            this.RefleshButton.Click += new System.EventHandler(this.Button_Click);
             // 
             // StopButton
             // 
@@ -135,7 +122,7 @@
             this.StopButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.StopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StopButton.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.StopButton.Location = new System.Drawing.Point(112, 358);
+            this.StopButton.Location = new System.Drawing.Point(246, 318);
             this.StopButton.Name = "StopButton";
             this.StopButton.Size = new System.Drawing.Size(128, 32);
             this.StopButton.TabIndex = 3;
@@ -149,52 +136,73 @@
             this.ForwardedPortsLabel.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ForwardedPortsLabel.Location = new System.Drawing.Point(12, 127);
             this.ForwardedPortsLabel.Name = "ForwardedPortsLabel";
-            this.ForwardedPortsLabel.Size = new System.Drawing.Size(205, 27);
+            this.ForwardedPortsLabel.Size = new System.Drawing.Size(180, 27);
             this.ForwardedPortsLabel.TabIndex = 1;
             this.ForwardedPortsLabel.Text = "Forwarded ports:";
             // 
+            // UrlsLabel
+            // 
+            this.UrlsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.UrlsLabel.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.UrlsLabel.Location = new System.Drawing.Point(12, 207);
+            this.UrlsLabel.Name = "UrlsLabel";
+            this.UrlsLabel.Size = new System.Drawing.Size(180, 27);
+            this.UrlsLabel.TabIndex = 1;
+            this.UrlsLabel.Text = "URLs:";
+            // 
+            // HostArea
+            // 
+            this.HostArea.BackColor = System.Drawing.Color.Gainsboro;
+            this.HostArea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HostArea.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.HostArea.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.HostArea.Location = new System.Drawing.Point(198, 207);
+            this.HostArea.Multiline = true;
+            this.HostArea.Name = "HostArea";
+            this.HostArea.ReadOnly = true;
+            this.HostArea.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.HostArea.Size = new System.Drawing.Size(307, 88);
+            this.HostArea.TabIndex = 5;
+            this.HostArea.WordWrap = false;
+            // 
             // ForwardedPort
             // 
-            this.ForwardedPort.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ForwardedPort.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ForwardedPort.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ForwardedPort.BackColor = System.Drawing.Color.Gainsboro;
+            this.ForwardedPort.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ForwardedPort.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ForwardedPort.ForeColor = System.Drawing.Color.SeaGreen;
-            this.ForwardedPort.Location = new System.Drawing.Point(223, 127);
+            this.ForwardedPort.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.ForwardedPort.Location = new System.Drawing.Point(198, 127);
+            this.ForwardedPort.Multiline = true;
             this.ForwardedPort.Name = "ForwardedPort";
             this.ForwardedPort.ReadOnly = true;
-            this.ForwardedPort.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.ForwardedPort.ShowSelectionMargin = true;
-            this.ForwardedPort.Size = new System.Drawing.Size(236, 55);
-            this.ForwardedPort.TabIndex = 4;
-            this.ForwardedPort.Text = "";
+            this.ForwardedPort.Size = new System.Drawing.Size(307, 59);
+            this.ForwardedPort.TabIndex = 5;
             // 
-            // CopyButton
+            // WaitLable
             // 
-            this.CopyButton.BackColor = System.Drawing.Color.Azure;
-            this.CopyButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CopyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CopyButton.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.CopyButton.Location = new System.Drawing.Point(465, 127);
-            this.CopyButton.Name = "CopyButton";
-            this.CopyButton.Size = new System.Drawing.Size(43, 55);
-            this.CopyButton.TabIndex = 3;
-            this.CopyButton.Text = "↑";
-            this.CopyButton.UseVisualStyleBackColor = false;
-            this.CopyButton.Click += new System.EventHandler(this.CopyButton_Click);
+            this.WaitLable.BackColor = System.Drawing.Color.Transparent;
+            this.WaitLable.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.WaitLable.ForeColor = System.Drawing.Color.ForestGreen;
+            this.WaitLable.Location = new System.Drawing.Point(12, 318);
+            this.WaitLable.Name = "WaitLable";
+            this.WaitLable.Size = new System.Drawing.Size(228, 32);
+            this.WaitLable.TabIndex = 1;
+            this.WaitLable.Text = "Wait a moment...";
+            this.WaitLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PortForward2WSL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(530, 403);
+            this.ClientSize = new System.Drawing.Size(522, 366);
             this.Controls.Add(this.ForwardedPort);
+            this.Controls.Add(this.HostArea);
             this.Controls.Add(this.StopButton);
-            this.Controls.Add(this.RefleshButton);
-            this.Controls.Add(this.CopyButton);
             this.Controls.Add(this.StartButton);
             this.Controls.Add(this.PortsBox);
+            this.Controls.Add(this.WaitLable);
+            this.Controls.Add(this.UrlsLabel);
             this.Controls.Add(this.PortRule);
             this.Controls.Add(this.ForwardedPortsLabel);
             this.Controls.Add(this.Port);
@@ -220,11 +228,12 @@
         private System.Windows.Forms.TextBox PortsBox;
         private System.Windows.Forms.Label PortRule;
         private System.Windows.Forms.Button StartButton;
-        private System.Windows.Forms.Button RefleshButton;
         private System.Windows.Forms.Button StopButton;
         private System.Windows.Forms.Label ForwardedPortsLabel;
-        private System.Windows.Forms.RichTextBox ForwardedPort;
-        private System.Windows.Forms.Button CopyButton;
+        private System.Windows.Forms.Label UrlsLabel;
+        private System.Windows.Forms.TextBox HostArea;
+        private System.Windows.Forms.TextBox ForwardedPort;
+        private System.Windows.Forms.Label WaitLable;
     }
 }
 
