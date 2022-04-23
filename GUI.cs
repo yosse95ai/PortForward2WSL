@@ -1,17 +1,12 @@
 ﻿using PortForward2WSL.Properties;
 using System;
-using System.Collections.ObjectModel;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Management.Automation;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Net;
@@ -71,6 +66,7 @@ namespace PortForward2WSL
 
             if (clickedButton == Resources.start)
             {
+
                 if (PortsBox.Text == "")
                 {
                     SetLogError(Resources.empty);
